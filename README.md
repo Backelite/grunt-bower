@@ -26,6 +26,8 @@ Installer une nouvelle librairie :
 * Continuer à développer en utilisant angular !
 
 
+Informations :
+==============
 > `grunt watch` n'exécute rien tant qu'aucune modification n'a été détectée, pour forcer la compilation il suffit d'executer `grunt` seul d'abord.
 
 > La commande `grunt bower:init` ne doit plus être lancée après installation, utiliser seulement `grunt bower` à la place. 
