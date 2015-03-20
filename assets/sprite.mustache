@@ -1,0 +1,23 @@
+{
+// Default options
+'functions': true
+}
+
+{{#options.functions}}
+.sprite {
+    background: url("{{{spritesheet.image}}}.png") top left no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .sprite {
+        background-image: url("{{{spritesheet.image}}}@2x.png");
+        background-size: {{spritesheet.px.width}}/2 {{spritesheet.px.height}}/2;
+    }
+}
+{{/options.functions}}
+
+{{#items}}
+.sprite-{{name}}{background-position:{{px.offset_x}}/2 {{px.offset_y}}/2;width:{{px.width}}/2;height:{{px.height}}/2;}
+{{/items}}

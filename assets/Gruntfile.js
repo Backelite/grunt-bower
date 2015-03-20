@@ -62,6 +62,18 @@ module.exports = function(grunt) {
 		  }
 		},
 
+		//Sprites
+        sprite:{
+            retina: {
+                src: 'images/*.png',
+                dest: '../img/sprite@2x.png',
+                destCss: 'less/sprite.less',
+                cssTemplate: 'sprite.mustache',
+                imgPath: "/img/sprite",
+                padding: 2
+            },
+        },
+
 		//Temps réel
 		watch: {
 			js: {
@@ -85,6 +97,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-text-replace');
+	grunt.loadNpmTasks('grunt-spritesmith');
 
 	//Tasks
 	grunt.registerTask('bower:init', ['bower', 'replace']);
