@@ -74,6 +74,18 @@ module.exports = function(grunt) {
             },
         },
 
+        image_resize: {
+            options: {
+                width: "50%",
+                height: "50%",
+            },
+            dist: {
+                src: '../img/sprite@2x.png',
+                dest: '../img/sprite.png'
+
+            }
+        },
+
 		//Temps réel
 		watch: {
 			js: {
@@ -98,8 +110,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-text-replace');
 	grunt.loadNpmTasks('grunt-spritesmith');
+    grunt.loadNpmTasks('grunt-image-resize');
 
 	//Tasks
 	grunt.registerTask('bower:init', ['bower', 'replace']);
 	grunt.registerTask('default', ['jshint', 'uglify', 'less', 'cssmin']);
+	grunt.registerTask('sprites', ['sprite', 'image_resize']);
 };
