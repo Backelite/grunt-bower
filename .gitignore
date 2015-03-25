@@ -6,4 +6,4 @@ assets/less/variables.less
 web/css/styles.min.css
 web/js/scripts.min.js
 assets/images/*.png
-.idea/*
+/.idea/*
