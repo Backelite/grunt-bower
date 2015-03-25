@@ -1,5 +1,5 @@
-bower_components/*
-bower_dist/*
-node_modules/*
-assets/images/*
-.idea/*
+/bower_components/*
+/bower_dist/*
+/node_modules/*
+/assets/images/*.png
+/.idea/*
