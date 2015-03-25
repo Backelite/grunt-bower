@@ -1,5 +1,9 @@
-/bower_components/*
-/bower_dist/*
-/node_modules/*
-/assets/images/*.png
-/.idea/*
+assets/bower_components/*
+assets/bower_dist/*
+assets/node_modules/*
+assets/less/bootstrap.less
+assets/less/variables.less
+web/css/styles.min.css
+web/js/scripts.min.js
+assets/images/*.png
+.idea/*
