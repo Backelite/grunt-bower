@@ -18,63 +18,65 @@
     <div class="container">
         <div class="jumbotron">
           <h1>Environnement Grunt/Bower avec Bootstrap opérationnels en 2min.</h1>
-          <p class="lead">
+            <p class="lead">
+              <hr>
 
-
-            <h3>Première installation :</h3>
+              <h3>Première installation :</h3>
             <ul>
-              <li>Ouvrir une console dans assets/</li>
-              <li>
-                <code>npm install</code>
-              </li>
-              <li>
-                <code>grunt bower:init</code>
-              </li>
-              <li>
-                <code>grunt watch</code>
-              </li>
-              <li>
-                Commencer à développer !
-              </li>
+                <li>Ouvrir une console dans assets/</li>
+                <li><code>npm install</code></li>
+                <li><code>grunt bower:init</code></li>
+                <li><code>grunt watch</code></li>
+                <li>Commencer à développer !</li>
             </ul>
 
             <hr>
-
 
             <h3>
               Installer une nouvelle librairie : <br>
               <small>(Ici angular pour l'exemple)</small>
             </h3>
           	<ul>
-          		<li>Ouvrir une console dans assets/</li>
-          		<li>
-          			<code>bower install angularjs</code>
-          		</li>
-              <li>
-                <code>grunt bower</code>
-              </li>
-          		<li>
-          			<code>grunt watch</code>
-          		</li>
-          		<li>
-          			Continuer à développer en utilisant angular !
-          		</li>
+                <li>Ouvrir une console dans assets/</li>
+          		<li><code>bower install angularjs</code></li>
+                <li><code>grunt bower</code></li>
+          		<li><code>grunt watch</code></li>
+          		<li>Continuer à développer en utilisant angular !</li>
           	</ul>
 
             <hr>
 
+            <h3>Sprites (retina) :</h3>
+            <ul>
+                <li>
+                    <ul>
+                        <li>Prérequis :</li>
+                        <li><code>sudo apt-get install imagemagick</code> (ou <code>brew install imagemagick</code> pour Mac)</li>
+                        <li>Placer toutes ses images <strong>retina et png</strong> dans assets/images/</li>
+                    </ul>
+                </li>
+                <li>Ouvrir une console dans assets/</li>
+                <li><code>grunt sprites</code></li>
+                <li>
+                    Afficher ses images en faisant simplement
+                    <code>&lsaquo;span class="sprite sprite-nom-image"&rsaquo;&lsaquo;/span&rsaquo;</code> !
+                </li>
+            </ul>
+
+            <hr>
+
             <div class="alert alert-info">
-              <strong>
-                <code>grunt watch</code> n'exécute rien tant qu'aucune modification n'a été détectée, pour forcer la compilation il suffit d'executer <code>grunt</code> seul d'abord.
-              </strong>
+                <strong>
+                    <code>grunt watch</code> n'exécute rien tant qu'aucune modification n'a été détectée, pour forcer la compilation il suffit d'executer <code>grunt</code> seul d'abord.
+                </strong>
             </div>
 
             <div class="alert alert-danger">
-              <strong>
-                La commande <code>grunt bower:init</code> ne doit plus être lancée après installation, utiliser seulement <code>grunt bower</code> à la place.
-              </strong>
+                <strong>
+                    La commande <code>grunt bower:init</code> ne doit plus être lancée après installation, utiliser seulement <code>grunt bower</code> à la place.
+                </strong>
             </div>
-          </p>
+        </p>
         </div>
    	</div>
     <script src="js/scripts.min.js"></script>

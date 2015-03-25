@@ -84,14 +84,6 @@ module.exports = function(grunt) {
 
             }
         },
-        imagemin: {
-            sprites: {
-                options: {
-                    optimizationLevel: 3
-                },
-            src: ['../web/img/sprite.png','../web/img/sprite@2x.png']
-            }
-        },
 
 		//Temps réel
 		watch: {
@@ -118,11 +110,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-text-replace');
 	grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-image-resize');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-
 
 	//Tasks
 	grunt.registerTask('bower:init', ['bower', 'replace']);
 	grunt.registerTask('default', ['jshint', 'uglify', 'less', 'cssmin']);
-	grunt.registerTask('sprites', ['sprite', 'image_resize', 'imagemin']);
+	grunt.registerTask('sprites', ['sprite', 'image_resize']);
 };
