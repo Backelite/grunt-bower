@@ -20,6 +20,7 @@
     "grunt-text-replace": "^0.3.12",
     "grunt-spritesmith": "~3.6.0",
     "grunt-image-resize": "~1.0.0",
-    "gm": "~1.17.0"
+    "gm": "~1.17.0",
+    "grunt-contrib-imagemin": "~0.9.4"
   }
 }

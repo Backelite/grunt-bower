@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 	  	uglify: {
 		    dist: {
 		    	files: {
-		        	'../js/scripts.min.js': [libs + 'jquery/jquery.js', libs + '**/*.js', 'javascripts/*.js', '!'+libs+'**/*.min.js']
+		        	'../web/js/scripts.min.js': [libs + 'jquery/jquery.js', libs + '**/*.js', 'javascripts/*.js', '!'+libs+'**/*.min.js']
 		      	}
 		    }
 		},
@@ -22,14 +22,14 @@ module.exports = function(grunt) {
 		less: {
 		  dist: {
 		    files: {
-		      "../css/styles.min.css": "less/main.less"
+		      "../web/css/styles.min.css": "less/main.less"
 		    }
 		  },
 		},
 		cssmin: {
 			combine: {
 		    	files: {
-		      		'../css/styles.min.css': ['../css/styles.min.css', libs + '**/*.css', '!'+libs+'bootstrap/*.css']
+		      		'../web/css/styles.min.css': ['../web/css/styles.min.css', libs + '**/*.css', '!'+libs+'bootstrap/*.css']
 		   		}
 		  	}
 		},
@@ -66,23 +66,30 @@ module.exports = function(grunt) {
         sprite:{
             retina: {
                 src: 'images/*.png',
-                dest: '../img/sprite@2x.png',
+                dest: '../web/img/sprite@2x.png',
                 destCss: 'less/sprite.less',
                 cssTemplate: 'sprite.mustache',
-                imgPath: "/img/sprite",
+                imgPath: "../img/sprite",
                 padding: 2
             },
         },
-
         image_resize: {
             options: {
                 width: "50%",
                 height: "50%",
             },
             dist: {
-                src: '../img/sprite@2x.png',
-                dest: '../img/sprite.png'
+                src: '../web/img/sprite@2x.png',
+                dest: '../web/img/sprite.png'
 
+            }
+        },
+        imagemin: {
+            sprites: {
+                options: {
+                    optimizationLevel: 3
+                },
+            src: ['../web/img/sprite.png','../web/img/sprite@2x.png']
             }
         },
 
@@ -111,9 +118,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-text-replace');
 	grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-image-resize');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+
 
 	//Tasks
 	grunt.registerTask('bower:init', ['bower', 'replace']);
 	grunt.registerTask('default', ['jshint', 'uglify', 'less', 'cssmin']);
-	grunt.registerTask('sprites', ['sprite', 'image_resize']);
+	grunt.registerTask('sprites', ['sprite', 'image_resize', 'imagemin']);
 };
