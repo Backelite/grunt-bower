@@ -1,0 +1,35 @@
+.desktop(@rules) {
+	@media(min-width: @screen-md-min) {
+		@rules();
+	}
+}
+
+.tablet(@rules) {
+	@media(min-width: @screen-sm-min) {
+		@rules();
+	}
+}
+
+.tabletOnly(@rules) {
+	@media (min-width: @screen-sm-min) and (max-width: @screen-md-min) {
+		@rules();
+	}
+}
+
+.mobile(@rules) {
+   @media(max-width: @screen-xs-max) {
+       @rules();
+   }
+}
+
+.container {
+	width: 300px; //Mobile
+
+	.tablet({
+		width: @container-tablet;
+	});
+
+	.desktop({
+		width: @container-desktop;
+	});
+}
